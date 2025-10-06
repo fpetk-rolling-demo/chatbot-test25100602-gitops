@@ -1,0 +1,22 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: chatbot-test25100602-gitops
+  description: This is GitOps manifest for chatbot-test25100602   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:
+    # ArgoCD apps from this template used rhtap-gitops as the grouping
+    argocd/app-selector: rhtap/gitops=chatbot-test25100602
+    janus-idp.io/tekton: chatbot-test25100602 
+    backstage.io/kubernetes-id: chatbot-test25100602 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:default/theofanispetkos 
+  lifecycle: experimental
+  dependsOn:
+    - component:chatbot-test25100602  
